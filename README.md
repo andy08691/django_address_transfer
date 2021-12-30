@@ -10,5 +10,6 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 
 # open http://127.0.0.1:8000/home in browser
+![Image text](https://github.com/andy08691/django_practice_project/blob/main/image/ss.png)
 
 
