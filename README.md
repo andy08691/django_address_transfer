@@ -1,5 +1,11 @@
 # django_practice_project
 
+# Get geo location:
+
+path: home/templates/home/home.html
+
+ref: https://www.w3schools.com/html/html5_geolocation.asp
+
 # First run:
 python3 manage.py runserver
 
