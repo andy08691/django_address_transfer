@@ -6,6 +6,13 @@ path: home/templates/home/home.html
 
 ref: https://www.w3schools.com/html/html5_geolocation.asp
 
+# Calculate distance between two geolocations
+
+path: home/templates/home/home.html
+
+ref: https://stackoverflow.com/questions/13840516/how-to-find-my-distance-to-a-known-location-in-javascript
+
+
 # First run:
 python3 manage.py runserver
 
