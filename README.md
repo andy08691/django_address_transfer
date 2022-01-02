@@ -14,6 +14,7 @@ ref: https://stackoverflow.com/questions/13840516/how-to-find-my-distance-to-a-k
 
 
 # First run:
+cd mytestsite
 python3 manage.py runserver
 
 # output
