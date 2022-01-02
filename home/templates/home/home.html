@@ -2,14 +2,20 @@
 <html>
 <body>
 
-<p>Click the button to get your coordinates.</p>
+<p>點擊按鈕抓自己位置</p>
 
-<button onclick="getLocation()">Try It</button>
+<button onclick="getLocation()">按！</button>
 
 <p id="demo"></p>
 
+<label >店家位置</label><br>
+<input id="store_lat" type="text" name="store_lat" value="" placeholder="經度">
+<input id="store_long" type="text" name="store_long" value="" placeholder="緯度"><br><br>
+<input type="submit" value="計算距離" onclick="calculate_distance()">
+<p id="distance"></p>
 <script>
 var x = document.getElementById("demo");
+var user_coords = null
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -20,8 +26,32 @@ function getLocation() {
 }
 
 function showPosition(position) {
+  user_coords = position.coords
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
+}
+
+function calculate_distance(){
+  store_lat = document.getElementById('store_lat').value
+  store_long = document.getElementById('store_long').value
+  const toRadian = n => (n * Math.PI) / 180
+  let lat2 = store_lat
+  let lon2 = store_long
+  let lat1 = user_coords.latitude
+  let lon1 = user_coords.longitude
+  let R = 6371 // km
+  let x1 = lat2 - lat1
+  let dLat = toRadian(x1)
+  let x2 = lon2 - lon1
+  let dLon = toRadian(x2)
+  let a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(toRadian(lat1)) * Math.cos(toRadian(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2)
+  let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+  let d = R * c
+  distance = Math.abs(d * 1000)
+  document.getElementById("distance").innerHTML = "" + distance+" M"
+  
 }
 </script>
 
