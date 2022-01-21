@@ -13,6 +13,35 @@
 <input id="store_long" type="text" name="store_long" value="" placeholder="緯度"><br><br>
 <input type="submit" value="計算距離" onclick="calculate_distance()">
 <p id="distance"></p>
+ 
+
+<label >店家地址轉經緯度</label><br>
+<input id="store_address" type="text" name="store_lat" value="台北市士林區承德路四段" placeholder="店家地址"><br><br>
+<input type="submit" value="轉換" onclick="btnClick()">
+<p id="latlong"></p>
+<script> 
+function btnClick(){ 
+	fetch("geoprocessing",{
+    method:'POST', 
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(
+      {
+        address: document.getElementById("store_address").value
+      }
+    )
+  }) 
+  .then((response)=> response.text())
+	.then((data)=>{ 
+    {% comment %} data = JSON.parse(data); {% endcomment %}
+    document.getElementById("latlong").innerHTML =  data
+}) 
+} 
+</script>
+
+
 <script>
 var x = document.getElementById("demo");
 var user_coords = null
