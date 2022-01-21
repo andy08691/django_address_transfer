@@ -12,6 +12,13 @@ path: home/templates/home/home.html
 
 ref: https://stackoverflow.com/questions/13840516/how-to-find-my-distance-to-a-known-location-in-javascript
 
+# Set address to geolocation(latitude, longitude)
+
+path: home/templates/home/home.html
+
+ref: https://towardsdatascience.com/geocode-with-python-161ec1e62b89
+ref: https://stackoverflow.com/questions/60083187/python-geopy-nominatim-too-many-requests
+
 
 # First run:
 cd mytestsite
@@ -25,6 +32,6 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 
 # open http://127.0.0.1:8000/home in browser
-![Image text](https://github.com/andy08691/django_practice_project/blob/main/image/ss1.png)
+![Image text](https://github.com/andy08691/django_practice_project/blob/main/image/ss2.png)
 
 
